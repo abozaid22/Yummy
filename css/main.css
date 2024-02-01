@@ -1,0 +1,148 @@
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* :root{
+    
+} */
+i{
+    cursor: pointer;
+}
+.loading-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 811;
+}
+
+.loader {
+    position: relative;
+    width: 120px;
+    height: 14px;
+    border-radius: 0 0 15px 15px;
+    background-color: #3e494d;
+    box-shadow: 0 -1px 4px #5d6063 inset;
+    animation: panex 0.5s linear alternate infinite;
+    transform-origin: 170px 0;
+    z-index: 10;
+    perspective: 300px;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: calc( 100% - 2px);
+  top: 0;
+  z-index: -2;
+  height: 10px;
+  width: 70px;
+  border-radius: 0 4px 4px 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#6c4924, #4b2d21), linear-gradient(#4d5457 24px, transparent 0), linear-gradient(#9f9e9e 24px, transparent 0);
+  background-size: 50px 10px , 4px 8px , 24px 4px;
+  background-position: right center , 17px center , 0px center;
+}
+.loader::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -2;
+    transform: translate(-50% , -20px) rotate3d(75, -2, 3, 78deg);
+    width: 55px;
+    height: 53px;
+    background: #fff;
+    background-image:
+    radial-gradient(circle 3px , #fff6 90%, transparent 10%),
+    radial-gradient(circle 12px , #ffc400 90%, transparent 10%),
+    radial-gradient(circle 12px , #ffae00 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-position: -4px -6px , -2px -2px , -1px -1px;
+    box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+    border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+    animation: eggRst 1s ease-out infinite;
+}
+@keyframes eggRst {
+  0% ,  100%{  transform: translate(-50%, -20px) rotate3d(90, 0, 0, 90deg); opacity: 0; }
+  10% , 90% {  transform: translate(-50%, -30px) rotate3d(90, 0, 0, 90deg); opacity: 1; }
+  25%  {transform:  translate(-50% , -40px) rotate3d(85, 17, 2, 70deg) }
+  75% {transform:  translate(-50% , -40px) rotate3d(75, -3, 2, 70deg) }
+  50% {transform:  translate(-55% , -50px) rotate3d(75, -8, 3, 50deg) }
+}
+@keyframes panex {
+  0%{  transform: rotate(-5deg)  }
+  100%{  transform: rotate(10deg)  }
+}
+  
+.nav-tab{
+    width: 260px;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.side-nav{
+    position: fixed;
+    top: 0;
+    left: -260px ;
+    height: 100vh;
+    display: flex;
+    z-index: 500;
+}
+.nav-header{
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    width: 45px;
+    z-index: 500;
+}
+ul li{
+    cursor: pointer;
+}
+ul li{
+    position: relative;
+    top: 50%;
+    opacity: 0;
+}
+
+img{
+    width: 100%;
+}
+
+.meal-layer{
+    width: 100%;
+    height: 100%;
+    background-color: #f9f6f6ca;
+    top: 100%;
+    transition: .5s;
+}
+.meal:hover .meal-layer{
+    top: 0;
+}
+
+
+.sizeW{
+    height: 200px;
+    overflow: hidden;
+}
+.dpc{
+    padding: 0px;
+}
+.dpc p:first-child{
+    background-color:#CFF4FC;
+    margin: 1px;
+    border-radius: 5px 0 0 5px;
+    /* box-shadow: 500px 500px 500px 500px #CFF4FC inset; */
+}
+.dpc p:last-child{
+    background-color:#CFF4FC;
+    margin: 1px;
+    border-radius: 0 5px 5px 0;
+    /* box-shadow: 500px 500px 500px 500px #CFF4FC inset; */
+}
